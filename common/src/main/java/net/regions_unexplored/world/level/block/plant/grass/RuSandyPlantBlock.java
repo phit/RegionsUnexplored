@@ -96,7 +96,7 @@ public class RuSandyPlantBlock extends BushBlock implements BonemealableBlock {
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         boolean isRed = state.getValue(IS_RED);
         if(state.is(RuBlocks.SANDY_GRASS.get())){
-            DoublePlantBlock sandyTallGrass = (DoublePlantBlock) RuBlocks.SANDY_TALL_GRASS;
+            DoublePlantBlock sandyTallGrass = (DoublePlantBlock) RuBlocks.SANDY_TALL_GRASS.get();
             if (sandyTallGrass.defaultBlockState().canSurvive(level, pos) && level.isEmptyBlock(pos.above())) {
                 placeAt(level, sandyTallGrass.defaultBlockState().setValue(IS_RED, isRed), pos, 2);
                 placeAt(level, sandyTallGrass.defaultBlockState().setValue(RuSandyDoublePlantBlock.HALF, DoubleBlockHalf.UPPER).setValue(IS_RED, isRed), pos.above(), 2);
